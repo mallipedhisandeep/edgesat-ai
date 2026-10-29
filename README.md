@@ -44,3 +44,4 @@ The required two-page note and five-slide deck are in [`deliverables/`](delivera
 
 The current model does not detect clouds: EuroSAT has no cloud labels. A cloud-labelled dataset and a trained/evaluated cloud head are still needed.
 # edgesat-ai
+By Harshika Rao Kasthuri
