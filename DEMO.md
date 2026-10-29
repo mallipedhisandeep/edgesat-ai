@@ -28,6 +28,6 @@ The quality head detects synthetic corruption patterns only; it does not detect 
 
 
 
-## Browser dashboard
+# Browser dashboard
 
 From the repository root, install dependencies with `python3 -m pip install -r requirements.txt`, then launch `python3 -m streamlit run dashboard.py`. Upload a JPG, PNG, or TIFF tile and select either model variant. The page displays the image, class scores, and uncalibrated entropy indicators. It shows synthetic-corruption output only for the noise-trained variant; the clean-only quality head was not trained on corrupted examples.
