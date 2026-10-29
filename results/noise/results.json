@@ -1,0 +1,134 @@
+{
+  "mode": "noise",
+  "target_is_result": false,
+  "split_counts": {
+    "official_train_pool": 1600,
+    "fit_train": 1440,
+    "validation": 160,
+    "test": 400
+  },
+  "split_protocol": "official 80/20 random_split with seed 42; internal 90/10 validation from training pool with seed 43",
+  "clean": {
+    "macro_f1": 0.7705243133927253,
+    "accuracy": 0.7875,
+    "per_class_f1": {
+      "AnnualCrop": 0.8311688311688312,
+      "Forest": 0.8932038834951457,
+      "HerbaceousVegetation": 0.6938775510204082,
+      "Highway": 0.5142857142857142,
+      "Industrial": 0.961038961038961,
+      "Pasture": 0.6428571428571429,
+      "PermanentCrop": 0.5555555555555556,
+      "Residential": 0.9230769230769231,
+      "River": 0.71875,
+      "SeaLake": 0.9714285714285714
+    },
+    "classification_report": {
+      "AnnualCrop": {
+        "precision": 0.8,
+        "recall": 0.8648648648648649,
+        "f1-score": 0.8311688311688312,
+        "support": 37.0
+      },
+      "Forest": {
+        "precision": 0.8679245283018868,
+        "recall": 0.92,
+        "f1-score": 0.8932038834951457,
+        "support": 50.0
+      },
+      "HerbaceousVegetation": {
+        "precision": 0.68,
+        "recall": 0.7083333333333334,
+        "f1-score": 0.6938775510204082,
+        "support": 48.0
+      },
+      "Highway": {
+        "precision": 0.6206896551724138,
+        "recall": 0.43902439024390244,
+        "f1-score": 0.5142857142857142,
+        "support": 41.0
+      },
+      "Industrial": {
+        "precision": 0.925,
+        "recall": 1.0,
+        "f1-score": 0.961038961038961,
+        "support": 37.0
+      },
+      "Pasture": {
+        "precision": 0.6206896551724138,
+        "recall": 0.6666666666666666,
+        "f1-score": 0.6428571428571429,
+        "support": 27.0
+      },
+      "PermanentCrop": {
+        "precision": 0.5714285714285714,
+        "recall": 0.5405405405405406,
+        "f1-score": 0.5555555555555556,
+        "support": 37.0
+      },
+      "Residential": {
+        "precision": 0.9230769230769231,
+        "recall": 0.9230769230769231,
+        "f1-score": 0.9230769230769231,
+        "support": 39.0
+      },
+      "River": {
+        "precision": 0.696969696969697,
+        "recall": 0.7419354838709677,
+        "f1-score": 0.71875,
+        "support": 31.0
+      },
+      "SeaLake": {
+        "precision": 0.9807692307692307,
+        "recall": 0.9622641509433962,
+        "f1-score": 0.9714285714285714,
+        "support": 53.0
+      },
+      "accuracy": 0.7875,
+      "macro avg": {
+        "precision": 0.7686548260891137,
+        "recall": 0.7766706353540596,
+        "f1-score": 0.7705243133927253,
+        "support": 400.0
+      },
+      "weighted avg": {
+        "precision": 0.7819945248662638,
+        "recall": 0.7875,
+        "f1-score": 0.7826084547988803,
+        "support": 400.0
+      }
+    }
+  },
+  "quality_head_synthetic_clean_vs_gaussian_f1": 1.0,
+  "noise": {
+    "gaussian": {
+      "severity": 0.15,
+      "macro_f1": 0.5974810228344111,
+      "drop_percentage_points": 17.304329055831424
+    },
+    "salt_pepper": {
+      "severity": 0.15,
+      "macro_f1": 0.5724750809058508,
+      "drop_percentage_points": 19.804923248687455
+    },
+    "channel_dropout": {
+      "severity": 1.0,
+      "macro_f1": 0.7037960859934232,
+      "drop_percentage_points": 6.672822739930206
+    }
+  },
+  "deployment": {
+    "torchscript_size_mb": 0.44915771484375,
+    "cpu_latency_ms_per_tile": 2.2303582450001613,
+    "benchmark_device": "cpu",
+    "latency_batch_size": 1,
+    "parameter_count": 89820,
+    "fp32_parameter_footprint_mb": 0.3426361083984375
+  },
+  "targets": {
+    "clean_macro_f1_min": 0.85,
+    "model_size_mb_max": 5,
+    "cpu_latency_ms_max": 10,
+    "moderate_noise_f1_drop_pp_max": 8
+  }
+}

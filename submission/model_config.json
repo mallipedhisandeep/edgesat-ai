@@ -1,0 +1,32 @@
+{
+  "classes": [
+    "AnnualCrop",
+    "Forest",
+    "HerbaceousVegetation",
+    "Highway",
+    "Industrial",
+    "Pasture",
+    "PermanentCrop",
+    "Residential",
+    "River",
+    "SeaLake"
+  ],
+  "input_shape": [
+    3,
+    64,
+    64
+  ],
+  "input_range": [
+    0,
+    1
+  ],
+  "quality_labels": [
+    "clean",
+    "synthetically_corrupted"
+  ],
+  "uncertainty_output": {
+    "method": "normalized_predictive_entropy",
+    "calibrated": false,
+    "meaning": "softmax distribution ambiguity; not probability of error"
+  }
+}
