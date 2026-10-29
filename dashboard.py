@@ -1,6 +1,5 @@
 """Local Streamlit dashboard for the EdgeSat AI TorchScript demo."""
 from pathlib import Path
-
 import streamlit as st
 import torch
 from PIL import Image
@@ -107,7 +106,7 @@ with uc1:
     st.progress(landcover_uncertainty)
 if model_choice == "Noise-trained":
     with uc2:
-        st.write(f"**Quality entropy:** {quality_uncertainty:.3f} / 1.000")
+        st.write(f"**Quality entropy:** {quality_uncertainty :.3f} / 1.000")
         st.progress(quality_uncertainty)
 st.warning(
     "Entropy is not a calibrated probability that a prediction is wrong. "
