@@ -2,7 +2,7 @@
 
 A compact EuroSAT RGB land-cover classifier with a second head for recognizing synthetic sensor corruption. It does **not** detect clouds.
 
-## What is included
+# What is included
 
 - Training, data, model, and prediction scripts.
 - Colab notebook and its source ZIP for the organizer’s execution workflow.
