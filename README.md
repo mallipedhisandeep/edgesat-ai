@@ -23,7 +23,7 @@ Install the dependencies above, then launch the local browser dashboard:
 python3 -m streamlit run dashboard.py
 ```
 
-The page lets you upload an image, select the clean-only or noise-trained model, and view land-cover scores, synthetic-corruption output, and uncalibrated entropy indicators. It runs locally; it does not detect clouds.
+The page lets you upload an image, select the clean-only or noise-trained model, and view land-cover scores and uncalibrated entropy indicators. The synthetic-corruption output is shown only for the noise-trained model; the clean-only quality head was not trained on corrupted examples. It runs locally and does not detect clouds.
 
 ## Run locally
 

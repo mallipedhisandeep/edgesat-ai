@@ -80,9 +80,15 @@ with right:
     col1, col2 = st.columns(2)
     col1.metric("Land cover", class_names[class_id])
     col2.metric("Top-class score", f"{float(landcover_prob[class_id]) * 100:.1f}%")
-    qcol1, qcol2 = st.columns(2)
-    qcol1.metric("Input quality", quality_names[quality_id])
-    qcol2.metric("Quality score", f"{float(quality_prob[quality_id]) * 100:.1f}%")
+    if model_choice == "Noise-trained":
+        qcol1, qcol2 = st.columns(2)
+        qcol1.metric("Input quality", quality_names[quality_id])
+        qcol2.metric("Quality score", f"{float(quality_prob[quality_id]) * 100:.1f}%")
+    else:
+        st.caption(
+            "Synthetic-corruption output is hidden for the clean-only baseline: "
+            "that quality head was not trained on corrupted examples."
+        )
 
     st.markdown("**Land-cover scores**")
     for idx in torch.argsort(landcover_prob, descending=True).tolist():
@@ -92,14 +98,18 @@ with right:
 st.divider()
 st.subheader("Prediction ambiguity")
 st.caption("Normalized softmax entropy: 0 means concentrated scores; values nearer 1 mean more spread-out scores.")
-uc1, uc2 = st.columns(2)
+if model_choice == "Noise-trained":
+    uc1, uc2 = st.columns(2)
+else:
+    uc1 = st.container()
 with uc1:
     st.write(f"**Land-cover entropy:** {landcover_uncertainty:.3f} / 1.000")
     st.progress(landcover_uncertainty)
-with uc2:
-    st.write(f"**Quality entropy:** {quality_uncertainty:.3f} / 1.000")
-    st.progress(quality_uncertainty)
+if model_choice == "Noise-trained":
+    with uc2:
+        st.write(f"**Quality entropy:** {quality_uncertainty:.3f} / 1.000")
+        st.progress(quality_uncertainty)
 st.warning(
-    "These entropy values are not calibrated probabilities that the prediction is wrong. "
+    "Entropy is not a calibrated probability that a prediction is wrong. "
     "The quality head was trained on synthetic corruption labels, not cloud labels."
 )
