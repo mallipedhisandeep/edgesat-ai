@@ -26,3 +26,8 @@ The saved example output was `Pasture` at 92.63% land-cover confidence, with the
 
 The quality head detects synthetic corruption patterns only; it does not detect clouds. Entropy is not calibrated to the chance of error.
 
+
+
+## Browser dashboard
+
+From the repository root, install dependencies with `python3 -m pip install -r requirements.txt`, then launch `python3 -m streamlit run dashboard.py`. Upload a JPG, PNG, or TIFF tile and select either model variant. The page displays the image, class scores, synthetic-corruption output, and uncalibrated entropy indicators.

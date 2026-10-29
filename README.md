@@ -15,6 +15,16 @@ The EuroSAT image dataset is not committed. The training script downloads it whe
 
 Open `EdgeSatAI_Colab.ipynb` in Colab, choose a GPU runtime if available, upload `EdgeSatAI_Submission.zip` when prompted, then use **Runtime → Run all**. The notebook trains clean-only and noise-augmented models and downloads results.
 
+## Interactive dashboard
+
+Install the dependencies above, then launch the local browser dashboard:
+
+```bash
+python3 -m streamlit run dashboard.py
+```
+
+The page lets you upload an image, select the clean-only or noise-trained model, and view land-cover scores, synthetic-corruption output, and uncalibrated entropy indicators. It runs locally; it does not detect clouds.
+
 ## Run locally
 
 ```bash
